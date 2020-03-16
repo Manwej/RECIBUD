@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import "./config";
+import firebase from "firebase/app";
+import "firebase/auth";
 
-function App() {
+//Components
+import Landing from "./components/Landing";
+import Login from "./components/Login";
+// Styles imports
+import Button from "react-bootstrap/Button";
+import "./styles/App.css";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Landing />
+        </Route>
+        <Route exact path="/recipies">
+          <Login />
+        </Route>
+
+        <Route path="/recipies/:id">
+          {/* {selectedSpot ? (
+            <Infopage props={selectedSpot} user={user} />
+          ) : (
+            <Redirect from="/mapscreen/:id" to="/mapscreen" />
+          )} */}
+        </Route>
+
+        <Route path="/hello">
+          <Landing />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
-
-export default App;

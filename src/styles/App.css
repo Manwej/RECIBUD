@@ -1,0 +1,37 @@
+/* general styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.root {
+  height: 100%;
+}
+/* Styles for Landing page */
+.background {
+  height: 100%;
+  background-color: #f25555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 0.8em;
+}
+.logoLanding {
+  height: 7% !important;
+}
+/* styles for every page other than landing*/
+.container-ep {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
