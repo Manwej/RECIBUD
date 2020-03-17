@@ -27,12 +27,21 @@ export default function Landing() {
   return (
     <Fragment>
       <Container className="background">
-        <img src={Logo} alt="logo" className="logoLanding" />
-        <p>{quote}</p>
-        <p>Ron Swanson</p>
-        <Link to="/recipies">
-          <Button>Start Exploring now</Button>
-        </Link>
+        <div className="content">
+          <div className="half"></div>
+          <img src={Logo} alt="logo" className="logoLanding" />
+          <p>Find amazing recipies </p>
+          <br></br>
+          <p className="quote">{quote}</p>
+          <p>
+            <i>Ron Swanson</i>
+          </p>
+        </div>
+        <div className="footer">
+          <Link to="/recipies">
+            <Button>Start Exploring now</Button>
+          </Link>
+        </div>
       </Container>
     </Fragment>
   );

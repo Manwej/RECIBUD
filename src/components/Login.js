@@ -32,6 +32,7 @@ export default function Login() {
 
     firebase.auth().signInWithRedirect(provider);
   };
+
   const logInEmail = e => {
     e.preventDefault();
     firebase
@@ -39,15 +40,16 @@ export default function Login() {
       .signInWithEmailAndPassword(email, password)
       .catch(function(error) {
         // Handle Errors here.
-        alert("user does not exist, please signup");
+        alert(error.code + "\n " + error.message);
         console.log(error);
       });
+    checkAuth();
     console.log(user);
   };
+
   const signUpEmail = e => {
     e.preventDefault();
-    console.log(user);
-
+    // console.log(user);
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -59,13 +61,29 @@ export default function Login() {
       });
     console.log(user);
   };
-  //   const checkAuth = () => {
-  //     firebase.auth().onAuthStateChanged(function(user) {
-  //       if (user) {
-  //         setUser(user);
-  //       }
-  //     });
-  //   };
+
+  const checkAuth = () => {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log("logged in");
+        setUser(user);
+        console.log(user);
+      }
+    });
+  };
+  const signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(function() {
+        setUser(null);
+        console.log("logged out");
+      })
+      .catch(function(error) {
+        // An error happened.
+      });
+    console.log(user);
+  };
 
   const initGoogleLogin = e => {
     firebase
@@ -92,7 +110,8 @@ export default function Login() {
   }, []);
   return (
     <Fragment>
-      {/* {user && <Redirect to="/hello"></Redirect>} */}
+      <Button onClick={signOut}>Logout</Button>
+      {user && <Redirect to="/recipies" onClick={signOut}></Redirect>}
       <Container className="container-ep">
         <Form>
           <Form.Group controlId="formBasicEmail">

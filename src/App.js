@@ -12,8 +12,9 @@ import "firebase/auth";
 //Components
 import Landing from "./components/Landing";
 import Login from "./components/Login";
+import Recipies from "./components/Recipies";
+import Vegan from "./components/Vegan";
 // Styles imports
-import Button from "react-bootstrap/Button";
 import "./styles/App.css";
 
 export default function App() {
@@ -23,16 +24,24 @@ export default function App() {
         <Route exact path="/">
           <Landing />
         </Route>
-        <Route exact path="/recipies">
+        {/* <Route exact path="/login">
           <Login />
+        </Route> */}
+        <Route exact path="/recipies">
+          <Recipies></Recipies>
         </Route>
 
-        <Route path="/recipies/:id">
-          {/* {selectedSpot ? (
-            <Infopage props={selectedSpot} user={user} />
-          ) : (
-            <Redirect from="/mapscreen/:id" to="/mapscreen" />
-          )} */}
+        <Route path="/recipies/vegan">
+          <Vegan />
+        </Route>
+        <Route path="/recipies/vegetarian">
+          <Vegan />
+        </Route>
+        <Route path="/recipies/fish">
+          <Vegan />
+        </Route>
+        <Route path="/recipies/meat">
+          <Vegan />
         </Route>
 
         <Route path="/hello">

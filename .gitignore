@@ -46,4 +46,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # my own ignores
-/src/config.js
+config.js
