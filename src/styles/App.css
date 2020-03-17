@@ -4,6 +4,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Muli", sans-serif;
 }
 html {
   height: 100%;
@@ -46,8 +47,14 @@ body {
   flex-shrink: 0;
   margin-bottom: 15%;
 }
+.footer button {
+  background-color: #3046ff;
+  border-radius: 40px;
+  font-size: 1em;
+  padding: 10px 30px;
+}
 .half {
-  height: 40%;
+  height: 35%;
 }
 /* styles for every page other than landing
 .container-ep {
@@ -57,8 +64,7 @@ body {
   align-items: center;
   flex-direction: column;
 } */
-/* Selection of recipies page */
-
+/* recipies component */
 .content-reci {
   display: flex;
   width: 100%;
@@ -87,7 +93,6 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-
 .section2 {
   background-color: #3046ff;
   border-radius: 20px;
@@ -97,13 +102,13 @@ body {
   justify-content: flex-end;
 }
 .content-reci a div:nth-child(1) {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .content-reci a div:nth-child(2) {
-  width: 60%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -120,9 +125,11 @@ body {
 .pumpkin {
   height: 90px;
 }
-.fish,
 .meat {
   height: 60px;
+}
+.fish {
+  height: 70px;
 }
 .headline {
   font-size: 2em;
@@ -132,7 +139,7 @@ body {
 .headline span {
   font-weight: 700;
 }
-/* recipies page */
+/* dishes component */
 .container {
   height: 100%;
 }

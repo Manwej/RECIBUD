@@ -6,9 +6,7 @@ import Container from "react-bootstrap/Container";
 
 import Dish from "./Dish";
 import "../config";
-import firebase from "firebase/app";
 
-var db = firebase.firestore();
 export default function Dishes(props) {
   console.log(props);
   const [data, setData] = useState("");
@@ -37,30 +35,7 @@ export default function Dishes(props) {
       .catch(err => {
         console.log(err);
       });
-  }, []);
-  //   const addData = obj => {
-  //     // Add a new document in collection "cities"
-  //     db.collection("recipies")
-  //       .doc("vegan")
-  //       .set(obj)
-  //       .then(function() {
-  //         console.log("Document successfully written!");
-  //       })
-  //       .catch(function(error) {
-  //         console.error("Error writing document: ", error);
-  //       });
-  //   // getData();
-  // }, []);
-  // const getData = () => {
-  //   db.collection("recipies")
-  //     .doc("vegan")
-  //     .get()
-  //     .then(doc => {
-  //       let d = doc.data();
-  //       setData(d);
-  //       return d;
-  //     });
-  // };
+  });
 
   return (
     <Fragment>

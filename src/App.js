@@ -5,15 +5,14 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+//Firebase
 import "./config";
 import firebase from "firebase/app";
 import "firebase/auth";
-
 //Components
 import Landing from "./components/Landing";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
-
 import Recipies from "./components/Recipies";
 import Dishes from "./components/Dishes";
 // Styles imports
@@ -68,20 +67,12 @@ export default function App() {
       })
       .catch(function(error) {
         console.log(error);
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
       });
   };
   useEffect(() => {
     checkAuth();
     initGoogleLogin();
-  }, []);
+  });
 
   return (
     <Router>
@@ -89,9 +80,6 @@ export default function App() {
         <Route exact path="/">
           <Landing />
         </Route>
-        {/* <Route exact path="/login">
-          <Login />
-        </Route> */}
         <Route exact path="/recipies">
           {login ? (
             <Fragment>
@@ -100,16 +88,12 @@ export default function App() {
           ) : (
             <Fragment>
               <Login onClick={logInGoogle} />
-              <Redirect to="/recipies" onClick={signOut}></Redirect>
+              <Redirect to="/recipies"></Redirect>
             </Fragment>
           )}
         </Route>
         <Route path="/recipies/:id">
-          {dishes ? (
-            <Dishes props={dishes} />
-          ) : (
-            <Redirect from="/recipies/:id" to="/recipies" />
-          )}
+          <Dishes props={dishes} />
         </Route>
       </Switch>
     </Router>

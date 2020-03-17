@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "../styles/App.css";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 
 import Pumpkin from "../styles/pumpkin.png";
 import Egg from "../styles/egg.png";

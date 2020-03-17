@@ -30,7 +30,6 @@ export default function Landing() {
         <div className="content">
           <div className="half"></div>
           <img src={Logo} alt="logo" className="logoLanding" />
-          <p>Find amazing recipies </p>
           <br></br>
           <p className="quote">{quote}</p>
           <p>
@@ -39,7 +38,7 @@ export default function Landing() {
         </div>
         <div className="footer">
           <Link to="/recipies">
-            <Button>Start Exploring now</Button>
+            <Button>Find amazing recipies</Button>
           </Link>
         </div>
       </Container>
