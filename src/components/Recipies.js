@@ -6,7 +6,12 @@ import "../styles/App.css";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-export default function Recipies() {
+import Pumpkin from "../styles/pumpkin.png";
+import Egg from "../styles/egg.png";
+import Fish from "../styles/fisch.png";
+import Meat from "../styles/meat.png";
+
+export default function Recipies(props) {
   return (
     <Fragment>
       <Container className="container-ep">
@@ -14,39 +19,47 @@ export default function Recipies() {
           <div className="headline">
             <span>Discover</span> Recipies
           </div>
-          <Link to="/recipies/vegan" className="section1">
+
+          <Link to="/recipies/:id" className="section1">
             <div>
-              <img src="" alt="img" />
+              <img src={Pumpkin} alt="img" className="pumpkin" />
             </div>
             <div>
-              <p>Vegan</p>
+              <button onClick={props.onClick} value="vegan">
+                Vegan
+              </button>
             </div>
           </Link>
-          <Link to="/recipies/vegetarian" className="section2">
+          <Link to={"/recipies/vegetarian"} className="section2">
             <div>
-              <img src="" alt="img" />
+              <img src={Egg} alt="img" className="egg" />
             </div>
 
             <div>
-              <p>Vegetarian</p>
+              <button onClick={props.onClick} value="vegetarian">
+                Vegetarian
+              </button>
             </div>
           </Link>
           <Link to="/recipies/fish" className="section1">
             <div>
-              <img src="" alt="img" />
+              <img src={Fish} alt="img" className="fish" />
             </div>
-
             <div>
-              <p>Fish</p>
+              <button value="fish" onClick={props.onClick}>
+                Fish
+              </button>
             </div>
           </Link>
           <Link to="/recipies/meat" className="section2">
             <div>
-              <img src="" alt="img" />
+              <img src={Meat} alt="img" className="meat" />
             </div>
 
             <div>
-              <p>Meat</p>
+              <button value="meat" onClick={props.onClick}>
+                Meat
+              </button>
             </div>
           </Link>
         </div>

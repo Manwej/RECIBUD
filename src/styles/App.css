@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:200,400,500,700,800&display=swap");
+
 /* general styles */
 * {
   margin: 0;
@@ -10,6 +12,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-family: "Muli", sans-serif;
 }
 .root {
   height: 100%;
@@ -46,23 +49,30 @@ body {
 .half {
   height: 40%;
 }
-/* styles for every page other than landing*/
+/* styles for every page other than landing
 .container-ep {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} */
 /* Selection of recipies page */
+
 .content-reci {
   display: flex;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  height: 100%;
+  color: white;
+  height: 90%;
+  overflow: hidden;
+}
+.content-reci button {
+  color: white;
+  text-align: right;
+  padding: 0 20px 10px 0;
 }
 .content-reci a {
   height: 20%;
@@ -73,45 +83,58 @@ body {
   background-color: #f25555;
   border-radius: 20px;
   color: white;
-  font-size: 2em;
+  font-size: 1.6em;
   display: flex;
   justify-content: flex-end;
 }
 
 .section2 {
-  background-color: blue;
+  background-color: #3046ff;
   border-radius: 20px;
   color: white;
-  font-size: 2em;
+  font-size: 1.6em;
   display: flex;
   justify-content: flex-end;
 }
 .content-reci a div:nth-child(1) {
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .content-reci a div:nth-child(2) {
-  width: 65%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 .content-reci a p,
-.content-reci a img {
-  height: 30%;
+.egg {
+  height: 100px;
   margin: 10%;
   text-align: right;
 }
+.content-reci a img {
+  margin-left: 20px;
+}
+.pumpkin {
+  height: 90px;
+}
+.fish,
+.meat {
+  height: 60px;
+}
 .headline {
   font-size: 2em;
-  color: blue;
+  color: #3046ff;
+  font-weight: 200;
+}
+.headline span {
+  font-weight: 700;
 }
 /* recipies page */
 .container {
   height: 100%;
-  padding: 0 80px;
 }
 .content-id {
   height: 100%;
@@ -158,4 +181,19 @@ body {
   border: 1px solid white;
   border-radius: 50px;
   margin-right: 5px;
+}
+/* login component */
+.login {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logout {
+  display: flex;
+  justify-content: flex-end;
+}
+.logout button {
+  background-color: #3046ff;
 }

@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import Image from "react-bootstrap/Image";
 
 export default function Dish(props) {
-  console.log(props);
   return (
     <Fragment>
       <div className="imagecontainer">
