@@ -1,12 +1,8 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-
 //styles
 import "../styles/App.css";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
-
 import Pumpkin from "../styles/pumpkin.png";
 import Egg from "../styles/egg.png";
 import Fish from "../styles/fisch.png";
@@ -21,46 +17,36 @@ export default function Recipies(props) {
             <span>Discover</span> Recipies
           </div>
 
-          <Link to="/recipies/:id" className="section1">
+          <Link to="/recipies/vegan" className="section section1">
             <div>
               <img src={Pumpkin} alt="img" className="pumpkin" />
             </div>
             <div>
-              <button onClick={props.onClick} value="vegan">
-                Vegan
-              </button>
+              <p>Vegan</p>
             </div>
           </Link>
-          <Link to={"/recipies/vegetarian"} className="section2">
+          <Link to="/recipies/vegetarian" className="section section2">
             <div>
               <img src={Egg} alt="img" className="egg" />
             </div>
-
             <div>
-              <button onClick={props.onClick} value="vegetarian">
-                Vegetarian
-              </button>
+              <p>Vegetarian</p>
             </div>
           </Link>
-          <Link to="/recipies/fish" className="section1">
+          <Link to="/recipies/fish" className="section section1">
             <div>
               <img src={Fish} alt="img" className="fish" />
             </div>
             <div>
-              <button value="fish" onClick={props.onClick}>
-                Fish
-              </button>
+              <p>Fish</p>
             </div>
           </Link>
-          <Link to="/recipies/meat" className="section2">
+          <Link to="/recipies/meat" className="section section2">
             <div>
               <img src={Meat} alt="img" className="meat" />
             </div>
-
             <div>
-              <button value="meat" onClick={props.onClick}>
-                Meat
-              </button>
+              <p>Meat</p>
             </div>
           </Link>
         </div>

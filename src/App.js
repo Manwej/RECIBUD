@@ -15,18 +15,13 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Recipies from "./components/Recipies";
 import Dishes from "./components/Dishes";
+import Onedish from "./components/Onedish";
+
 // Styles imports
 import "./styles/App.css";
 
 export default function App() {
-  const [dishes, setDishes] = useState("");
   const [login, setLogin] = useState("");
-
-  const handleChange = e => {
-    let display = e.target.value;
-    console.log(e.target.value);
-    setDishes(display);
-  };
 
   const logInGoogle = () => {
     let provider = new firebase.auth.GoogleAuthProvider();
@@ -83,7 +78,7 @@ export default function App() {
         <Route exact path="/recipies">
           {login ? (
             <Fragment>
-              <Logout onClick={signOut} /> <Recipies onClick={handleChange} />
+              <Logout onClick={signOut} /> <Recipies />
             </Fragment>
           ) : (
             <Fragment>
@@ -92,9 +87,8 @@ export default function App() {
             </Fragment>
           )}
         </Route>
-        <Route path="/recipies/:id">
-          <Dishes props={dishes} />
-        </Route>
+        <Route exact path="/recipies/:id" component={Dishes} />
+        <Route exact path="/recipies/:id/:id" component={Onedish} />
       </Switch>
     </Router>
   );

@@ -1,19 +1,16 @@
 import React, { Fragment, useEffect, useState } from "react";
-
 //styles
 import "../styles/App.css";
 import Container from "react-bootstrap/Container";
-
+//components
 import Dish from "./Dish";
-import "../config";
 
 export default function Dishes(props) {
-  console.log(props);
   const [data, setData] = useState("");
   useEffect(() => {
     let url =
       "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?diet=" +
-      `${props.props}` +
+      `${props.match.params.id}` +
       "&number=10&offset=0&type=main%20course&query=dish";
     fetch(url, {
       method: "GET",
@@ -27,22 +24,19 @@ export default function Dishes(props) {
         return response.json();
       })
       .then(result => {
-        console.log(result);
-        //addData(result);
         setData(result);
-        //   localStorage.setItem("data", result);
       })
       .catch(err => {
         console.log(err);
       });
-  });
-
+    // eslint-disable-next-line
+  }, []);
   return (
     <Fragment>
       <Container>
         <div className="content-id">
           <div className="headline-id">
-            Fantastic <br /> <span>{props.props}</span>
+            Fantastic <br /> <span>{props.match.params.id}</span>
             <br />
             recipies
           </div>
@@ -50,7 +44,13 @@ export default function Dishes(props) {
             <Fragment>
               <div className="recipie">
                 {data.results.map((recipie, index) => {
-                  return <Dish props={recipie} key={index} />;
+                  return (
+                    <Dish
+                      props={recipie}
+                      key={index}
+                      value={props.match.params.id}
+                    />
+                  );
                 })}
               </div>
             </Fragment>

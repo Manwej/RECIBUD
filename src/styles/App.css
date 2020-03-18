@@ -56,14 +56,10 @@ body {
 .half {
   height: 35%;
 }
-/* styles for every page other than landing
-.container-ep {
+/* container */
+.container {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
+}
 /* recipies component */
 .content-reci {
   display: flex;
@@ -75,37 +71,36 @@ body {
   height: 90%;
   overflow: hidden;
 }
-.content-reci button {
-  color: white;
+.content-reci p {
+  margin-right: 15%;
+  margin-bottom: 5%;
   text-align: right;
-  padding: 0 20px 10px 0;
 }
 .content-reci a {
   height: 20%;
   width: 80%;
   margin: 2% 0;
 }
-.section1 {
-  background-color: #f25555;
+.section {
   border-radius: 20px;
   color: white;
   font-size: 1.6em;
   display: flex;
   justify-content: flex-end;
 }
+.section1 {
+  background-color: #f25555;
+}
 .section2 {
   background-color: #3046ff;
-  border-radius: 20px;
-  color: white;
-  font-size: 1.6em;
-  display: flex;
-  justify-content: flex-end;
 }
 .content-reci a div:nth-child(1) {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 .content-reci a div:nth-child(2) {
   width: 50%;
@@ -113,23 +108,21 @@ body {
   flex-direction: column;
   justify-content: flex-end;
 }
-.content-reci a p,
 .egg {
-  height: 100px;
-  margin: 10%;
-  text-align: right;
-}
-.content-reci a img {
-  margin-left: 20px;
+  height: 90px;
+  width: 70px;
 }
 .pumpkin {
   height: 90px;
+  width: 90px;
 }
 .meat {
-  height: 60px;
+  height: 70px;
+  width: 110px;
 }
 .fish {
-  height: 70px;
+  height: 60px;
+  width: 110px;
 }
 .headline {
   font-size: 2em;
@@ -140,9 +133,7 @@ body {
   font-weight: 700;
 }
 /* dishes component */
-.container {
-  height: 100%;
-}
+
 .content-id {
   height: 100%;
   overflow: scroll;
@@ -203,4 +194,42 @@ body {
 }
 .logout button {
   background-color: #3046ff;
+}
+/* one dish component */
+.onedish {
+  overflow: scroll;
+}
+.description-ondish {
+  width: 100%;
+  height: 10%;
+  background-color: #f25555;
+  border-radius: 20px;
+  margin-top: 3%;
+  margin-bottom: 10px;
+  color: white;
+  padding: 5%;
+  text-align: center;
+}
+.description-ondish div {
+  display: flex;
+}
+.description-ondish p {
+  font-size: 0.5em;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 50px;
+  margin-right: 5px;
+}
+.ingredients {
+  width: 100%;
+
+  background-color: #f25555;
+  border-radius: 20px;
+  margin-top: 3%;
+  margin-bottom: 40px;
+  color: white;
+  padding: 5%;
+}
+.ingredients ul {
+  padding-left: 20px;
 }

@@ -1,7 +1,6 @@
 import React from "react";
+//components
 import "../styles/App.css";
-import LoginIcon from "../styles/Icon_user.png";
-
 import Button from "react-bootstrap/Button";
 
 export default function Logout(props) {
