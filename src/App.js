@@ -6,7 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 //Firebase
-import "./config";
+import "../config";
 import firebase from "firebase/app";
 import "firebase/auth";
 //Components
